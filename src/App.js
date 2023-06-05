@@ -84,7 +84,7 @@ class App extends React.Component {
     //setState is ASYNCHRONOUS
     this.setState({ imgUrl: this.state.input });
 
-    fetch("http://localhost:3001/imageUrl", {
+    fetch("https://smart-brain-api-seven.vercel.app/imageUrl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -95,7 +95,7 @@ class App extends React.Component {
       .then((res) => {
         //update the entries when submit
         if (res) {
-          fetch("http://localhost:3001/image", {
+          fetch("https://smart-brain-api-seven.vercel.app/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
